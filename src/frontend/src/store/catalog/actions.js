@@ -3,6 +3,7 @@ import { SortPreference } from '../../shared/enums'
 
 import { API, graphqlOperation } from '@aws-amplify/api'
 import { getFlightBySchedule, getFlight } from './graphql'
+import { listFlights } from 'app/graphql/queries'
 
 const catalogEndpoint =
   process.env.VUE_APP_CatalogEndpoint || 'no booking endpoint set'
@@ -70,6 +71,10 @@ export async function fetchFlights(
       }
     } = await API.graphql(graphqlOperation(getFlightBySchedule, flightOpts))
 
+
+     const { data : 
+      { listFlights : { items : flightDataAPI } } } = await API.graphql(graphqlOperation(listFlights))
+    console.log(flightDataAPI)
     // data mutations happen within a Flight class
     // here we convert graphQL results into an array of Flights
     // before committing to Vuex State Management
