@@ -27,7 +27,7 @@ Parameters:
 
   LogRetentionInDays:
     Type: Number
-    Default: 14
+    Default: "14"
     Description: CloudWatch Logs retention period
 
 
@@ -57,7 +57,7 @@ Resources:
           Projection:
             ProjectionType: ALL
       SSESpecification:
-        SSEEnabled: yes
+        SSEEnabled: true
 
   IngestFunc:
     Type: AWS::Serverless::Function
@@ -71,9 +71,21 @@ Resources:
             TableName: !Ref LoyaltyDataTable
         - Version: '2012-10-17'
           Statement:
-            Action: dynamodb:PutItem
-            Effect: Allow
-            Resource: !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${LoyaltyDataTable}"
+            [
+                {
+                Effect: "Allow",
+                "Action": [
+                  "dynamodb:PutItem"
+                ],
+              "Resource": [
+                {
+                    !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${LoyaltyDataTable}"
+                }
+              ]
+                }
+            ]
+            
+            
       Environment:
         Variables:
           TABLE_NAME: !Ref LoyaltyDataTable
