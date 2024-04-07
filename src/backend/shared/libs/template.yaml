@@ -16,9 +16,9 @@ Resources:
         # - python3.8
         - python3.8
         - python3.9
-        - python3.12
+        - python3.10
     Metadata:
-      BuildMethod: python3.8
+      BuildMethod: python3.10
 
   ProjectSharedLibsParameter:
     Type: "AWS::SSM::Parameter"
