@@ -16,5 +16,45 @@
         "awsserverlessairline44ea6421": {}
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsserverlessairline-dev-6297e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::214015662206:role/amplify-awsserverlessairline-dev-6297e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::214015662206:role/amplify-awsserverlessairline-dev-6297e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-awsserverlessairline-dev-6297e-deployment",
+      "UnauthRoleName": "amplify-awsserverlessairline-dev-6297e-unauthRole",
+      "StackName": "amplify-awsserverlessairline-dev-6297e",
+      "StackId": "arn:aws:cloudformation:us-east-1:214015662206:stack/amplify-awsserverlessairline-dev-6297e/1988b8a0-f50b-11ee-9e1e-0edcc47817a1",
+      "AmplifyAppId": "d2wo8mbm6ex2ay"
+    },
+    "categories": {
+      "auth": {
+        "awsserverlessairline44ea6421": {}
+      }
+    }
+  },
+  "stage": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-awsserverlessairline-stage-3c37e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::214015662206:role/amplify-awsserverlessairline-stage-3c37e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::214015662206:role/amplify-awsserverlessairline-stage-3c37e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-awsserverlessairline-stage-3c37e-deployment",
+      "UnauthRoleName": "amplify-awsserverlessairline-stage-3c37e-unauthRole",
+      "StackName": "amplify-awsserverlessairline-stage-3c37e",
+      "StackId": "arn:aws:cloudformation:us-east-1:214015662206:stack/amplify-awsserverlessairline-stage-3c37e/952e9e10-f516-11ee-9cd1-0affe0125d01",
+      "AmplifyAppId": "d2wo8mbm6ex2ay"
+    },
+    "categories": {
+      "auth": {
+        "awsserverlessairline44ea6421": {},
+        "userPoolGroups": {}
+      },
+      "api": {
+        "awsserverlessairline": {}
+      }
+    }
   }
 }

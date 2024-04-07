@@ -10,6 +10,14 @@ DEPLOYMENT_BUCKET_NAME ?= "UNDEFINED"
 GRAPHQL_API_ID ?= "UNDEFINED"
 BOOKING_TABLE_NAME ?= "UNDEFINED"
 
+# $Env:FLIGHT_TABLE_NAME = 'flights-table'
+# $Env:AWS_BRANCH = 'dev'
+# $Env:STACK_NAME = 'airline-booking-stack'
+# $Env:DEPLOYMENT_BUCKET_NAME = 'airline-booking-stack-05042024'
+# $Env:GRAPHQL_API_ID = 'airline-booking-id'
+# $Env:BOOKING_TABLE_NAME = 'booking-table'
+
+
 target:
 	$(info ${HELP_MESSAGE})
 	@exit 0
@@ -79,7 +87,7 @@ export.parameter:
 
 _install_os_packages:
 	$(info [*] Installing jq...)
-	yum install jq -y
+	sudo yum install jq -y
 	$(info [*] Upgrading Python SAM CLI and CloudFormation linter to the latest version...)
 	python3 -m pip install --upgrade --user cfn-lint aws-sam-cli
 	npm -g install aws-cdk
@@ -107,6 +115,14 @@ define HELP_MESSAGE
 		Description: Stripe Private Secret Key generated in Stripe; manually added in Amplify Console Env Variables per App
 
 	Common usage:
+
+	# AWS_BRANCH="dev"
+	# FLIGHT_TABLE_NAME=Flight-hnxochcn4vfdbgp6zaopgcxk2a-xray
+	# STACK_NAME=awsserverlessairline-twitch-20190705130553
+	# DEPLOYMENT_BUCKET_NAME=airline-booking-stack-05042024
+	# GRAPHQL_API_ID=hnxochcn4vfdbgp6zaopgcxk2a
+	# BOOKING_TABLE_NAME=Booking-hnxochcn4vfdbgp6zaopgcxk2a-xray
+	# STRIPE_SECRET_KEY=sk-test-asd
 
 	...::: Bootstraps environment with necessary tools like SAM CLI, cfn-lint, etc. :::...
 	$ make init

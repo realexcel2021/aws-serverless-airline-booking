@@ -2,7 +2,7 @@ deploy: ##=> Deploy shared Lambda Layers using SAM
 	$(info [*] Packaging and deploying shared Lambda libs layers...)
 	sam build && \
 	sam package \
-		--s3-bucket $${DEPLOYMENT_BUCKET_NAME} \
+		--s3-bucket airline-booking-stack-05042024 \
 		--output-template-file packaged.yaml && \
 	sam deploy \
 		--template-file packaged.yaml \

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authawsserverlessairline44ea6421"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 3,
+        "apiKeyExpirationDate": "2024-04-10T20:22:09.089Z",
+        "keyDescription": "sample"
+      }
+    ],
+    "conflictResolution": {},
+    "apiName": "awsserverlessairline"
+  }
+}

@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  
+  linux:
+    container_name: amazonlinux
+    build: ./
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: on-failure
+    command: ["sleep","infinity"]
